@@ -8,7 +8,8 @@ export const siteConfig = {
   tagline: "Stories Worth Hearing. People Worth Knowing.",
   description:
     "The Lost Art of Storytelling with Nathan Salins is an interview podcast and media brand exploring the entrepreneurs, business leaders, athletes, community leaders and creators shaping our world — plus fast-moving news shorts on the stories everyone's talking about.",
-  url: "https://www.thelostartofstorytelling.com",
+  // Update this once a custom domain is connected — see README.
+  url: "https://lost-art-of-storytelling.vercel.app",
   locale: "en_US",
   themeColor: "#08090b",
 

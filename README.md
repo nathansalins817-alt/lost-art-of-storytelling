@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Lost Art of Storytelling — Website
 
-## Getting Started
+The official website for **The Lost Art of Storytelling**, an interview and news media podcast hosted by Nathan Salins. Built with Next.js (App Router), React, TypeScript and Tailwind CSS.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All podcast content lives in plain TypeScript data files — no CMS or database required to get started:
 
-## Learn More
+- `src/data/site.ts` — brand config, nav links, social/contact URLs
+- `src/data/episodes.ts` — every episode/interview
+- `src/data/guests.ts` — guest profiles
+- `src/data/shorts.ts` — News & Shorts vertical video content
 
-To learn more about Next.js, take a look at the following resources:
+Add a new episode, guest or short by adding an object to the relevant array — pages, cards, filters and the sitemap all update automatically.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every `youtubeId` in these files is a placeholder (format `demo-ep-001`, etc.). Swap in real YouTube video IDs once episodes are published — see `src/components/media/YouTubeLiteEmbed.tsx`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+- `npm run dev` — start the dev server (Turbopack)
+- `npm run build` — production build
+- `npm run start` — run the production build
+- `npm run lint` — ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project deploys to [Vercel](https://vercel.com/new) with zero configuration — connect the repo and deploy. Before going live, update `url` in `src/data/site.ts` to the real production domain so canonical URLs, the sitemap and Open Graph tags resolve correctly.

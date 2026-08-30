@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { shorts, getShortBySlug } from "@/data/shorts";
-import { buildMetadata } from "@/lib/metadata";
-import { formatDate } from "@/lib/utils";
+import { buildBreadcrumbList, buildMetadata } from "@/lib/metadata";
+import { formatDate, formatViews } from "@/lib/utils";
 import { CategoryPill } from "@/components/ui/CategoryPill";
 import { YouTubeLiteEmbed } from "@/components/media/YouTubeLiteEmbed";
 import { YouTubeSubscribeButton } from "@/components/ui/YouTubeSubscribeButton";
@@ -40,6 +40,8 @@ export default async function ShortPage({ params }: ShortPageProps) {
   const short = getShortBySlug(slug);
   if (!short) notFound();
 
+  const views = short.views ? formatViews(short.views) : undefined;
+
   const related = shorts
     .filter((s) => s.slug !== short.slug && s.category === short.category)
     .slice(0, 4);
@@ -60,9 +62,15 @@ export default async function ShortPage({ params }: ShortPageProps) {
     url: `${siteConfig.url}/news-and-shorts/${short.slug}`,
   };
 
+  const breadcrumbJsonLd = buildBreadcrumbList([
+    { name: "News & Shorts", path: "/news-and-shorts" },
+    { name: short.headline, path: `/news-and-shorts/${short.slug}` },
+  ]);
+
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <section className="py-10 sm:py-14">
         <div className="container-edit">
           <Link
@@ -89,10 +97,10 @@ export default async function ShortPage({ params }: ShortPageProps) {
               <div className="flex flex-wrap items-center gap-3">
                 <CategoryPill label={short.category} tone="trending" />
                 <span className="text-sm text-faint">{formatDate(short.publishedAt)}</span>
-                {short.views ? (
+                {views ? (
                   <>
                     <span className="text-sm text-faint">·</span>
-                    <span className="text-sm text-faint">{short.views} views</span>
+                    <span className="text-sm text-faint">{views} views</span>
                   </>
                 ) : null}
               </div>

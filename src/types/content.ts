@@ -36,6 +36,22 @@ export interface Guest {
   featured?: boolean;
 }
 
+export interface TranscriptLine {
+  speaker: string;
+  timestamp?: string;
+  text: string;
+}
+
+export interface Chapter {
+  label: string;
+  startSeconds: number;
+}
+
+export interface MentionedLink {
+  label: string;
+  url: string;
+}
+
 export interface Episode {
   slug: string;
   title: string;
@@ -50,6 +66,12 @@ export interface Episode {
   publishedAt: string;
   featured?: boolean;
   episodeNumber: number;
+  /** Optional — renders a collapsible transcript section when present. */
+  transcript?: TranscriptLine[];
+  /** Optional — renders a timestamped chapter list that seeks the player. */
+  chapters?: Chapter[];
+  /** Optional — renders a "mentioned in this episode" show-notes section. */
+  mentionedLinks?: MentionedLink[];
 }
 
 export interface Short {
@@ -60,5 +82,6 @@ export interface Short {
   youtubeId: string;
   publishedAt: string;
   trending?: boolean;
-  views?: string;
+  /** Raw view count — formatted (and threshold-gated) for display via formatViews(). */
+  views?: number;
 }

@@ -32,6 +32,71 @@ export const episodes: Episode[] = [
     runtime: "1 hr 22 min",
     publishedAt: "2025-10-01",
     episodeNumber: 2,
+    // Working example for the new transcript/chapters/show-notes fields —
+    // chapters are the real, full YouTube auto-chapter list for this episode.
+    // Transcript is a short real excerpt (lightly cleaned up from auto-captions)
+    // covering the opening of the video; extend it with more of the episode
+    // when you have the full transcript. mentionedLinks is a starting example.
+    transcript: [
+      {
+        speaker: "Andrew Ly",
+        timestamp: "0:00",
+        text: "And then I decided to organize a boat to get the whole family and escape Vietnam to Malaysia. It took one month from Vietnam to Malaysia, and during that journey we got robbed two times by Thai pirates.",
+      },
+      {
+        speaker: "Andrew Ly",
+        timestamp: "0:24",
+        text: "That location used to be a Filipino nightclub — there'd been a shooting there, seven people injured, two people died. That's why nobody wanted that shop.",
+      },
+      {
+        speaker: "Nathan Salins",
+        timestamp: "0:48",
+        text: "So was your company ever recognized by anyone super famous? Can you tell us a little about that?",
+      },
+      {
+        speaker: "Andrew Ly",
+        timestamp: "0:59",
+        text: "Yeah, there are a few. The one most people ask me about is President Obama, when he came to the United States in San Francisco...",
+      },
+    ],
+    chapters: [
+      { label: "Intro", startSeconds: 0 },
+      { label: "Intro: Andrew Ly", startSeconds: 79 },
+      { label: "Childhood in Vietnam", startSeconds: 152 },
+      { label: "Vietnam War Impact", startSeconds: 336 },
+      { label: "Family Background", startSeconds: 375 },
+      { label: "Boat Escape & Pirates", startSeconds: 585 },
+      { label: "Refugee Camp", startSeconds: 705 },
+      { label: "Journey to the US", startSeconds: 804 },
+      { label: "Arrival in California", startSeconds: 1116 },
+      { label: "San Francisco Payphone", startSeconds: 1256 },
+      { label: "Reconnecting in SF", startSeconds: 1362 },
+      { label: "Wife's Shared Journey", startSeconds: 1434 },
+      { label: "College & ESL", startSeconds: 1579 },
+      { label: "Buying Sugar Bowl", startSeconds: 1754 },
+      { label: "Adding Noodle Soup", startSeconds: 1856 },
+      { label: "Daily City Location", startSeconds: 1934 },
+      { label: "Community Impact", startSeconds: 2211 },
+      { label: "Business Expansion", startSeconds: 2304 },
+      { label: "2008 Financial Crisis", startSeconds: 2386 },
+      { label: "Wholesale Growth", startSeconds: 2522 },
+      { label: "Cold Outreach", startSeconds: 2631 },
+      { label: "Costco & Safeway", startSeconds: 2769 },
+      { label: "Business Model Shift", startSeconds: 2896 },
+      { label: "Lessons from 2008", startSeconds: 3042 },
+      { label: "Company Culture", startSeconds: 3302 },
+      { label: "Obama Speech Story", startSeconds: 3397 },
+      { label: "Company Vision Today", startSeconds: 3576 },
+      { label: "Book Recommendations", startSeconds: 3664 },
+      { label: "Free Time & Family", startSeconds: 3785 },
+      { label: "Rapid-Fire Q&A", startSeconds: 3886 },
+      { label: "Product Tier List", startSeconds: 4005 },
+      { label: "Tasting Pastries", startSeconds: 4370 },
+      { label: "Obama's Speech Clip", startSeconds: 4775 },
+    ],
+    mentionedLinks: [
+      { label: "Sugar Bowl Bakery — official site", url: "https://www.sugarbowlbakery.com" },
+    ],
   },
   {
     slug: "jason-ting-win-win-win",
@@ -125,10 +190,26 @@ export function getEpisodesByGuest(guestSlug: string) {
     .sort((a, b) => b.episodeNumber - a.episodeNumber);
 }
 
+/** Same category first (most recent first), then pads with the most recent other episodes. */
 export function getRelatedEpisodes(episode: Episode, count = 3) {
-  return episodes
-    .filter((e) => e.slug !== episode.slug)
-    .filter((e) => e.category === episode.category || e.guestSlug === episode.guestSlug)
-    .sort((a, b) => b.episodeNumber - a.episodeNumber)
-    .slice(0, count);
+  const sameCategory = episodes
+    .filter((e) => e.slug !== episode.slug && e.category === episode.category)
+    .sort((a, b) => b.episodeNumber - a.episodeNumber);
+
+  if (sameCategory.length >= count) return sameCategory.slice(0, count);
+
+  const rest = episodes
+    .filter((e) => e.slug !== episode.slug && e.category !== episode.category)
+    .sort((a, b) => b.episodeNumber - a.episodeNumber);
+
+  return [...sameCategory, ...rest].slice(0, count);
+}
+
+export function getAdjacentEpisodes(episode: Episode) {
+  const sorted = [...episodes].sort((a, b) => a.episodeNumber - b.episodeNumber);
+  const index = sorted.findIndex((e) => e.slug === episode.slug);
+  return {
+    previous: index > 0 ? sorted[index - 1] : undefined,
+    next: index >= 0 && index < sorted.length - 1 ? sorted[index + 1] : undefined,
+  };
 }

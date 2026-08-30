@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      // /interviews and /episodes were identical pages (same data, same
+      // component, different copy). Consolidated to /episodes.
+      { source: "/interviews", destination: "/episodes", permanent: true },
+    ];
+  },
   images: {
     remotePatterns: [
       // Placeholder guest portraits — swap for real headshots.

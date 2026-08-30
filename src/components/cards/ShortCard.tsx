@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Play, TrendingUp } from "lucide-react";
 import type { Short } from "@/types/content";
-import { cn } from "@/lib/utils";
+import { cn, formatViews } from "@/lib/utils";
 
 interface ShortCardProps {
   short: Short;
@@ -11,6 +11,8 @@ interface ShortCardProps {
 }
 
 export function ShortCard({ short, className, priority = false }: ShortCardProps) {
+  const views = short.views ? formatViews(short.views) : undefined;
+
   return (
     <Link
       href={`/news-and-shorts/${short.slug}`}
@@ -50,9 +52,9 @@ export function ShortCard({ short, className, priority = false }: ShortCardProps
         <p className="text-sm font-bold leading-snug text-white text-balance">
           {short.headline}
         </p>
-        {short.views ? (
+        {views ? (
           <p className="mt-1.5 text-[0.7rem] font-medium text-white/70">
-            {short.views} views
+            {views} views
           </p>
         ) : null}
       </div>

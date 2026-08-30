@@ -8,10 +8,14 @@ export const siteConfig = {
   tagline: "Stories Worth Hearing. People Worth Knowing.",
   description:
     "The Lost Art of Storytelling with Nathan Salins is an interview podcast and media brand exploring the entrepreneurs, business leaders, athletes, community leaders and creators shaping our world — plus fast-moving news shorts on the stories everyone's talking about.",
-  // Update this once a custom domain is connected — see README.
-  url: "https://lost-art-of-storytelling.vercel.app",
+  // Set NEXT_PUBLIC_SITE_URL in Vercel's project settings once a custom
+  // domain is connected — no code change or redeploy needed. Falls back to
+  // the current deployment URL when that env var isn't set.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://lost-art-of-storytelling.vercel.app",
   locale: "en_US",
   themeColor: "#08090b",
+  /** Single source of truth for "New episodes ___" copy across the site. */
+  publishCadence: "monthly",
 
   youtube: {
     channelUrl: "https://www.youtube.com/@thelostartofstorytelling",
@@ -38,21 +42,19 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Interviews", href: "/interviews" },
-  { label: "News & Shorts", href: "/news-and-shorts" },
   { label: "Episodes", href: "/episodes" },
+  { label: "News & Shorts", href: "/news-and-shorts" },
   { label: "Guests", href: "/guests" },
+  { label: "Be a Guest", href: "/be-a-guest" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const footerLinks = [
   { label: "Home", href: "/" },
-  { label: "Interviews", href: "/interviews" },
   { label: "Episodes", href: "/episodes" },
   { label: "News & Shorts", href: "/news-and-shorts" },
   { label: "About", href: "/about" },
-  { label: "Be a Guest", href: "/be-a-guest" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -65,6 +67,25 @@ export const contentCategories = [
   "Entertainment",
   "Personal Stories",
 ] as const;
+
+/** URL-slug <-> category mapping for /episodes?topic=... — shareable, indexable filter links. */
+export const categorySlugs: Record<(typeof contentCategories)[number], string> = {
+  Business: "business",
+  Entrepreneurship: "entrepreneurship",
+  Sports: "sports",
+  Technology: "technology",
+  Community: "community",
+  Entertainment: "entertainment",
+  "Personal Stories": "personal-stories",
+};
+
+export function categoryToSlug(category: (typeof contentCategories)[number]) {
+  return categorySlugs[category];
+}
+
+export function slugToCategory(slug: string) {
+  return contentCategories.find((category) => categorySlugs[category] === slug);
+}
 
 export const shortCategories = [
   "Trending",

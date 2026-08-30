@@ -1,9 +1,10 @@
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { siteConfig } from "@/data/site";
 
 export function NewsletterSection() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
+    <section id="newsletter" className="relative scroll-mt-24 overflow-hidden py-20 sm:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
@@ -17,8 +18,9 @@ export function NewsletterSection() {
             Don&apos;t Miss the Next Story
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            Get new interviews, stories and videos delivered straight to your
-            inbox.
+            One email, sent {siteConfig.publishCadence} — the new episode,
+            plus a quick roundup of that period&apos;s News &amp; Shorts.
+            Nothing else.
           </p>
           <NewsletterForm className="mx-auto mt-8 max-w-lg" />
           <p className="mt-4 text-xs text-faint">

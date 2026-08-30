@@ -2,36 +2,34 @@
 
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import type { Episode, Guest } from "@/types/content";
-import { contentCategories } from "@/data/site";
+import type { ContentCategory, Episode, Guest } from "@/types/content";
+import { categoryToSlug, contentCategories } from "@/data/site";
 import { EpisodeCard } from "@/components/cards/EpisodeCard";
 import { CategoryPill } from "@/components/ui/CategoryPill";
 import { cn } from "@/lib/utils";
 
 interface EpisodeExplorerProps {
+  /** Already filtered by topic on the server, from the ?topic= search param. */
   episodes: Episode[];
   guests?: Guest[];
-  showGuestFilter?: boolean;
   pageSize?: number;
+  /** The active category, resolved server-side from ?topic=; undefined means "All". */
+  activeTopic?: ContentCategory;
 }
 
 export function EpisodeExplorer({
   episodes,
   guests = [],
-  showGuestFilter = true,
   pageSize = 9,
+  activeTopic,
 }: EpisodeExplorerProps) {
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState<string>("All");
   const [guestSlug, setGuestSlug] = useState<string>("All");
   const [visibleCount, setVisibleCount] = useState(pageSize);
 
   const filtered = useMemo(() => {
     const query = search.trim().toLowerCase();
     return episodes
-      .filter((episode) =>
-        category === "All" ? true : episode.category === category
-      )
       .filter((episode) =>
         guestSlug === "All" ? true : episode.guestSlug === guestSlug
       )
@@ -44,7 +42,7 @@ export function EpisodeExplorer({
         );
       })
       .sort((a, b) => b.episodeNumber - a.episodeNumber);
-  }, [episodes, search, category, guestSlug]);
+  }, [episodes, search, guestSlug]);
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
@@ -74,7 +72,7 @@ export function EpisodeExplorer({
           />
         </div>
 
-        {showGuestFilter && guests.length > 0 ? (
+        {guests.length > 0 ? (
           <select
             value={guestSlug}
             onChange={(e) =>
@@ -93,20 +91,25 @@ export function EpisodeExplorer({
         ) : null}
       </div>
 
+      {/* Real links, not buttons — shareable, crawlable, and pre-filtered
+          server-side via the ?topic= search param. */}
       <div className="mask-fade-x mt-5 -mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
-        {["All", ...contentCategories].map((cat) => (
-          <button
+        <CategoryPill
+          label="All"
+          href="/episodes"
+          active={!activeTopic}
+          tone={!activeTopic ? "trending" : "default"}
+          className="shrink-0"
+        />
+        {contentCategories.map((cat) => (
+          <CategoryPill
             key={cat}
-            type="button"
-            onClick={() => updateFilter(() => setCategory(cat))}
+            label={cat}
+            href={`/episodes?topic=${categoryToSlug(cat)}`}
+            active={activeTopic === cat}
+            tone={activeTopic === cat ? "trending" : "default"}
             className="shrink-0"
-          >
-            <CategoryPill
-              label={cat}
-              active={category === cat}
-              tone={category === cat ? "trending" : "default"}
-            />
-          </button>
+          />
         ))}
       </div>
 

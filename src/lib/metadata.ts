@@ -64,3 +64,17 @@ export function buildMetadata({
     },
   };
 }
+
+/** JSON-LD BreadcrumbList — pass path segments from Home down to the current page. */
+export function buildBreadcrumbList(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "Home", path: "/" }, ...items].map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteConfig.url}${item.path}`,
+    })),
+  };
+}

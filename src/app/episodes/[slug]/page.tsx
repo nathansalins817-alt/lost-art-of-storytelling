@@ -3,12 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { episodes, getEpisodeBySlug, getRelatedEpisodes } from "@/data/episodes";
+import { episodes, getAdjacentEpisodes, getEpisodeBySlug, getRelatedEpisodes } from "@/data/episodes";
 import { getGuestBySlug } from "@/data/guests";
-import { buildMetadata } from "@/lib/metadata";
-import { formatDate, guestRole } from "@/lib/utils";
+import { buildBreadcrumbList, buildMetadata } from "@/lib/metadata";
+import { formatDate, guestRole, runtimeToIso8601, youtubeWatchUrl } from "@/lib/utils";
 import { CategoryPill } from "@/components/ui/CategoryPill";
-import { YouTubeLiteEmbed } from "@/components/media/YouTubeLiteEmbed";
+import { EpisodePlayer } from "@/components/episode/EpisodePlayer";
+import { EpisodeTranscript } from "@/components/episode/EpisodeTranscript";
+import { EpisodeShowNotes } from "@/components/episode/EpisodeShowNotes";
+import { EpisodeAdjacentNav } from "@/components/episode/EpisodeAdjacentNav";
 import { YouTubeSubscribeButton } from "@/components/ui/YouTubeSubscribeButton";
 import { EpisodeCard } from "@/components/cards/EpisodeCard";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -46,8 +49,24 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
   const guest = getGuestBySlug(episode.guestSlug);
   const related = getRelatedEpisodes(episode);
+  const { previous, next } = getAdjacentEpisodes(episode);
 
-  const jsonLd = {
+  // VideoObject covers the fields Google's video rich results actually key
+  // off (duration, uploadDate, thumbnail) since these episodes are hosted
+  // as YouTube videos, not separately-hosted audio files.
+  const videoJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: episode.title,
+    description: episode.description,
+    thumbnailUrl: episode.thumbnail,
+    uploadDate: episode.publishedAt,
+    ...(runtimeToIso8601(episode.runtime) ? { duration: runtimeToIso8601(episode.runtime) } : {}),
+    contentUrl: youtubeWatchUrl(episode.youtubeId),
+    embedUrl: `https://www.youtube.com/embed/${episode.youtubeId}`,
+  };
+
+  const podcastJsonLd = {
     "@context": "https://schema.org",
     "@type": "PodcastEpisode",
     name: episode.title,
@@ -64,15 +83,22 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
       ? {
           associatedMedia: {
             "@type": "MediaObject",
-            contentUrl: `https://www.youtube.com/watch?v=${episode.youtubeId}`,
+            contentUrl: youtubeWatchUrl(episode.youtubeId),
           },
         }
       : {}),
   };
 
+  const breadcrumbJsonLd = buildBreadcrumbList([
+    { name: "Episodes", path: "/episodes" },
+    { name: episode.title, path: `/episodes/${episode.slug}` },
+  ]);
+
   return (
     <>
-      <JsonLd data={jsonLd} />
+      <JsonLd data={videoJsonLd} />
+      <JsonLd data={podcastJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <section className="py-10 sm:py-14">
         <div className="container-edit">
           <Link
@@ -85,12 +111,11 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
           <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_340px]">
             <div>
-              <YouTubeLiteEmbed
+              <EpisodePlayer
                 youtubeId={episode.youtubeId}
                 thumbnail={episode.thumbnail}
                 title={episode.title}
-                priority
-                className="ring-1 ring-line-strong"
+                chapters={episode.chapters}
               />
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -125,6 +150,18 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                   Watch on YouTube
                 </a>
               </div>
+
+              {episode.transcript && episode.transcript.length > 0 ? (
+                <div className="mt-6">
+                  <EpisodeTranscript transcript={episode.transcript} />
+                </div>
+              ) : null}
+
+              {episode.mentionedLinks && episode.mentionedLinks.length > 0 ? (
+                <div className="mt-6">
+                  <EpisodeShowNotes links={episode.mentionedLinks} />
+                </div>
+              ) : null}
             </div>
 
             {guest ? (
@@ -160,6 +197,14 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           </div>
         </div>
       </section>
+
+      {previous || next ? (
+        <section className="border-t border-line py-10 sm:py-12">
+          <div className="container-edit">
+            <EpisodeAdjacentNav previous={previous} next={next} />
+          </div>
+        </section>
+      ) : null}
 
       {related.length > 0 ? (
         <section className="border-t border-line py-16 sm:py-20">

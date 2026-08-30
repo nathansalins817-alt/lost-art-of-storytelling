@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { footerLinks, siteConfig } from "@/data/site";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { YouTubeSubscribeButton } from "@/components/ui/YouTubeSubscribeButton";
-import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
 export function Footer() {
   return (
@@ -30,10 +30,16 @@ export function Footer() {
               Don&apos;t miss the next story
             </p>
             <p className="mt-2 max-w-sm text-sm text-muted">
-              New interviews, stories and videos delivered straight to your
-              inbox.
+              One email {siteConfig.publishCadence} with the new episode and
+              a News &amp; Shorts roundup — nothing else.
             </p>
-            <NewsletterForm className="mt-5" compact />
+            <Link
+              href="/#newsletter"
+              className="group mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-bright transition-colors hover:text-paper"
+            >
+              Join the newsletter
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
 

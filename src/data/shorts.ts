@@ -16,7 +16,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/t_ODFiZJB0A/hqdefault.jpg",
     youtubeId: "t_ODFiZJB0A",
     publishedAt: "2026-08-26",
-    views: "1.1K",
+    views: 1100,
   },
   {
     slug: "how-many-palmiers-can-sugar-bowl-bakery-make",
@@ -25,7 +25,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/Ulx9rlx6iPo/hqdefault.jpg",
     youtubeId: "Ulx9rlx6iPo",
     publishedAt: "2026-08-25",
-    views: "594",
+    views: 594,
   },
   {
     slug: "help-chloe-raise-10000-for-st-jude",
@@ -34,7 +34,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/mZOpEObPrr4/hqdefault.jpg",
     youtubeId: "mZOpEObPrr4",
     publishedAt: "2026-08-23",
-    views: "31",
+    views: 31,
   },
   {
     slug: "farmer-trusted-ai-lost-25-acres",
@@ -43,7 +43,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/IvJs8tFlExo/hqdefault.jpg",
     youtubeId: "IvJs8tFlExo",
     publishedAt: "2026-08-22",
-    views: "7",
+    views: 7,
   },
   {
     slug: "mcdonalds-is-coming-for-starbucks",
@@ -52,7 +52,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/s8lH_8fpOTo/hqdefault.jpg",
     youtubeId: "s8lH_8fpOTo",
     publishedAt: "2026-08-21",
-    views: "1.2K",
+    views: 1200,
   },
   {
     slug: "disney-announced-everything-at-d23",
@@ -61,7 +61,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/KknVQtEtihM/hqdefault.jpg",
     youtubeId: "KknVQtEtihM",
     publishedAt: "2026-08-20",
-    views: "1.5K",
+    views: 1500,
   },
   {
     slug: "what-i-did-in-lima-peru-part-1",
@@ -70,7 +70,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/tfRowD995X4/hqdefault.jpg",
     youtubeId: "tfRowD995X4",
     publishedAt: "2026-08-19",
-    views: "26",
+    views: 26,
   },
   {
     slug: "opera-singers-take-on-pop-music",
@@ -80,7 +80,7 @@ export const shorts: Short[] = [
     youtubeId: "Vk-p2-b-N60",
     publishedAt: "2026-08-17",
     trending: true,
-    views: "2.2K",
+    views: 2200,
   },
   {
     slug: "cooluli-mini-fridges-recalled",
@@ -89,7 +89,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/RGX_8fI9chQ/hqdefault.jpg",
     youtubeId: "RGX_8fI9chQ",
     publishedAt: "2026-08-16",
-    views: "32",
+    views: 32,
   },
   {
     slug: "reddit-joined-the-sp-500",
@@ -98,7 +98,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/CwIQAw4K8n4/hqdefault.jpg",
     youtubeId: "CwIQAw4K8n4",
     publishedAt: "2026-08-15",
-    views: "982",
+    views: 982,
   },
   {
     slug: "spacex-crashed-into-the-moon",
@@ -107,7 +107,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/fJlxPkBKCks/hqdefault.jpg",
     youtubeId: "fJlxPkBKCks",
     publishedAt: "2026-08-14",
-    views: "1K",
+    views: 1000,
   },
   {
     slug: "why-on-running-stock-crashed",
@@ -116,7 +116,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/qtBmGjMf9vo/hqdefault.jpg",
     youtubeId: "qtBmGjMf9vo",
     publishedAt: "2026-08-13",
-    views: "1.2K",
+    views: 1200,
   },
   {
     slug: "the-sun-is-disappearing-on-august-12",
@@ -125,7 +125,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/T899V87dZVQ/hqdefault.jpg",
     youtubeId: "T899V87dZVQ",
     publishedAt: "2026-08-12",
-    views: "1.1K",
+    views: 1100,
   },
   {
     slug: "google-takes-a-shot-at-apple-and-samsung",
@@ -134,7 +134,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/IIanKFqDLj0/hqdefault.jpg",
     youtubeId: "IIanKFqDLj0",
     publishedAt: "2026-08-10",
-    views: "1.7K",
+    views: 1700,
   },
   {
     slug: "why-so-many-volcanoes-are-erupting",
@@ -143,7 +143,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/X5WFh37UGtc/hqdefault.jpg",
     youtubeId: "X5WFh37UGtc",
     publishedAt: "2026-08-09",
-    views: "1.1K",
+    views: 1100,
   },
   {
     slug: "flying-copa-airlines-business-class-sf-to-panama",
@@ -152,7 +152,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/2VXNLg3Nzk8/hqdefault.jpg",
     youtubeId: "2VXNLg3Nzk8",
     publishedAt: "2026-08-07",
-    views: "903",
+    views: 903,
   },
   {
     slug: "apples-worst-decision-made-billions",
@@ -162,7 +162,7 @@ export const shorts: Short[] = [
     youtubeId: "GlPAKdFgtUU",
     publishedAt: "2026-08-06",
     trending: true,
-    views: "1.9K",
+    views: 1900,
   },
   {
     slug: "the-87-year-old-ferry-that-sank-in-guyana",
@@ -171,7 +171,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/fzBsQXudSsI/hqdefault.jpg",
     youtubeId: "fzBsQXudSsI",
     publishedAt: "2026-08-04",
-    views: "1.2K",
+    views: 1200,
   },
   {
     slug: "apple-sues-openai",
@@ -180,7 +180,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/B5gODuQV7pE/hqdefault.jpg",
     youtubeId: "B5gODuQV7pE",
     publishedAt: "2026-08-03",
-    views: "1K",
+    views: 1000,
   },
   {
     slug: "people-falling-asleep-in-waymos",
@@ -189,7 +189,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/BRPnYzPLsjo/hqdefault.jpg",
     youtubeId: "BRPnYzPLsjo",
     publishedAt: "2026-08-01",
-    views: "1K",
+    views: 1000,
   },
   {
     slug: "why-teri-handelman-risked-everything-to-start-a-school",
@@ -198,7 +198,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/hWPpK0ynsVo/hqdefault.jpg",
     youtubeId: "hWPpK0ynsVo",
     publishedAt: "2026-07-23",
-    views: "149",
+    views: 149,
   },
   {
     slug: "what-corporate-jobs-are-missing",
@@ -207,7 +207,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/u0KcWP11KjE/hqdefault.jpg",
     youtubeId: "u0KcWP11KjE",
     publishedAt: "2026-07-13",
-    views: "1K",
+    views: 1000,
   },
   {
     slug: "secret-benefit-of-single-gender-schools",
@@ -216,7 +216,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/voS17XwKv1s/hqdefault.jpg",
     youtubeId: "voS17XwKv1s",
     publishedAt: "2026-07-03",
-    views: "1.3K",
+    views: 1300,
   },
   {
     slug: "18-states-still-allow-this-in-schools",
@@ -225,7 +225,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/JLRVNsyAaVk/hqdefault.jpg",
     youtubeId: "JLRVNsyAaVk",
     publishedAt: "2026-06-23",
-    views: "1.3K",
+    views: 1300,
   },
   {
     slug: "why-us-schools-are-falling-behind-in-math",
@@ -234,7 +234,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/mmZYIQGllNo/hqdefault.jpg",
     youtubeId: "mmZYIQGllNo",
     publishedAt: "2026-06-13",
-    views: "925",
+    views: 925,
   },
   {
     slug: "how-an-aa-meeting-changed-teri-handelmans-career",
@@ -243,7 +243,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/adE5Y4OITF0/hqdefault.jpg",
     youtubeId: "adE5Y4OITF0",
     publishedAt: "2026-06-03",
-    views: "937",
+    views: 937,
   },
   {
     slug: "dont-be-a-swiss-army-knife",
@@ -252,7 +252,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/_G5XeIPpQcY/hqdefault.jpg",
     youtubeId: "_G5XeIPpQcY",
     publishedAt: "2026-05-24",
-    views: "1.5K",
+    views: 1500,
   },
   {
     slug: "jose-avilas-experience-creating-happy-aquarium",
@@ -261,7 +261,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/bqx6OvljWw4/hqdefault.jpg",
     youtubeId: "bqx6OvljWw4",
     publishedAt: "2026-05-14",
-    views: "1.4K",
+    views: 1400,
   },
   {
     slug: "jose-avila-was-a-very-bad-student",
@@ -271,7 +271,7 @@ export const shorts: Short[] = [
     youtubeId: "-AyFa4BLdv0",
     publishedAt: "2026-05-04",
     trending: true,
-    views: "1.9K",
+    views: 1900,
   },
   {
     slug: "what-ethel-salins-would-tell-her-younger-self",
@@ -280,7 +280,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/gNeV4bzHt68/hqdefault.jpg",
     youtubeId: "gNeV4bzHt68",
     publishedAt: "2026-04-24",
-    views: "128",
+    views: 128,
   },
   {
     slug: "ethel-salins-on-finding-motivation",
@@ -289,7 +289,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/wlK4UT1oqdE/hqdefault.jpg",
     youtubeId: "wlK4UT1oqdE",
     publishedAt: "2026-04-14",
-    views: "22",
+    views: 22,
   },
   {
     slug: "why-ethel-salins-became-a-vegetarian",
@@ -298,7 +298,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/7Y44wpm-_58/hqdefault.jpg",
     youtubeId: "7Y44wpm-_58",
     publishedAt: "2026-04-04",
-    views: "221",
+    views: 221,
   },
   {
     slug: "ethel-salins-most-inspiring-words",
@@ -307,7 +307,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/laENI2qRdoo/hqdefault.jpg",
     youtubeId: "laENI2qRdoo",
     publishedAt: "2026-03-25",
-    views: "63",
+    views: 63,
   },
   {
     slug: "ethel-salins-on-life-in-montreal",
@@ -316,7 +316,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/U_y6s4GHHsY/hqdefault.jpg",
     youtubeId: "U_y6s4GHHsY",
     publishedAt: "2026-03-15",
-    views: "97",
+    views: 97,
   },
   {
     slug: "the-captivating-story-of-nathans-grandmother",
@@ -325,7 +325,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/rRang5PCQq8/hqdefault.jpg",
     youtubeId: "rRang5PCQq8",
     publishedAt: "2026-03-05",
-    views: "478",
+    views: 478,
   },
   {
     slug: "what-arif-janmohamed-does-outside-the-office",
@@ -334,7 +334,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/zJmZ1QcK2tU/hqdefault.jpg",
     youtubeId: "zJmZ1QcK2tU",
     publishedAt: "2026-02-23",
-    views: "59",
+    views: 59,
   },
   {
     slug: "arif-janmohameds-advice-for-the-next-generation",
@@ -343,7 +343,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/KwyWiRznjR0/hqdefault.jpg",
     youtubeId: "KwyWiRznjR0",
     publishedAt: "2026-02-13",
-    views: "107",
+    views: 107,
   },
   {
     slug: "the-booms-and-busts-of-silicon-valley",
@@ -352,7 +352,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/L0EOc5fzxBY/hqdefault.jpg",
     youtubeId: "L0EOc5fzxBY",
     publishedAt: "2026-02-03",
-    views: "151",
+    views: 151,
   },
   {
     slug: "the-intriguing-story-of-arif-janmohamed",
@@ -361,7 +361,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/PAWU6rApYbY/hqdefault.jpg",
     youtubeId: "PAWU6rApYbY",
     publishedAt: "2026-01-24",
-    views: "76",
+    views: 76,
   },
   {
     slug: "the-coolest-car-jason-ting-has-detailed",
@@ -370,7 +370,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/nZcIsdkruXc/hqdefault.jpg",
     youtubeId: "nZcIsdkruXc",
     publishedAt: "2026-01-14",
-    views: "12",
+    views: 12,
   },
   {
     slug: "jason-ting-on-leading-video-production-class",
@@ -379,7 +379,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/P-_WRwK_8Xg/hqdefault.jpg",
     youtubeId: "P-_WRwK_8Xg",
     publishedAt: "2026-01-04",
-    views: "20",
+    views: 20,
   },
   {
     slug: "jason-ting-on-his-relationship-with-his-siblings",
@@ -388,7 +388,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/8G_uPh4fFVk/hqdefault.jpg",
     youtubeId: "8G_uPh4fFVk",
     publishedAt: "2025-12-25",
-    views: "435",
+    views: 435,
   },
   {
     slug: "why-time-matters-more-than-money-jason-ting",
@@ -398,7 +398,7 @@ export const shorts: Short[] = [
     youtubeId: "ajRk-L8tHzY",
     publishedAt: "2025-12-15",
     trending: true,
-    views: "2K",
+    views: 2000,
   },
   {
     slug: "the-coolest-car-jason-ting-has-driven",
@@ -407,7 +407,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/0Zrf5dJK7E8/hqdefault.jpg",
     youtubeId: "0Zrf5dJK7E8",
     publishedAt: "2025-12-05",
-    views: "135",
+    views: 135,
   },
   {
     slug: "why-jason-ting-wants-to-open-an-ice-cream-shop",
@@ -416,7 +416,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/qCKspESdiUY/hqdefault.jpg",
     youtubeId: "qCKspESdiUY",
     publishedAt: "2025-11-25",
-    views: "1.4K",
+    views: 1400,
   },
   {
     slug: "jason-ting-top-40-financial-advisors-under-40",
@@ -425,7 +425,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/UfzXrDko750/hqdefault.jpg",
     youtubeId: "UfzXrDko750",
     publishedAt: "2025-11-15",
-    views: "1K",
+    views: 1000,
   },
   {
     slug: "jason-ting-on-how-to-be-the-best",
@@ -434,7 +434,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/P-2IKvPd5_U/hqdefault.jpg",
     youtubeId: "P-2IKvPd5_U",
     publishedAt: "2025-11-05",
-    views: "1.3K",
+    views: 1300,
   },
   {
     slug: "jason-ting-on-protecting-his-people",
@@ -443,7 +443,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/p3LvonN-imw/hqdefault.jpg",
     youtubeId: "p3LvonN-imw",
     publishedAt: "2025-10-26",
-    views: "1.2K",
+    views: 1200,
   },
   {
     slug: "the-wonderful-story-of-jason-ting",
@@ -452,7 +452,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/7KaMxirsa9o/hqdefault.jpg",
     youtubeId: "7KaMxirsa9o",
     publishedAt: "2025-10-16",
-    views: "43",
+    views: 43,
   },
   {
     slug: "fun-fact-about-sugar-bowl-bakerys-palmiers",
@@ -461,7 +461,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/ilr28YwEZks/hqdefault.jpg",
     youtubeId: "ilr28YwEZks",
     publishedAt: "2025-10-06",
-    views: "852",
+    views: 852,
   },
   {
     slug: "the-heroic-inspiring-story-of-andrew-ly",
@@ -470,7 +470,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/q_if-WUCEiw/hqdefault.jpg",
     youtubeId: "q_if-WUCEiw",
     publishedAt: "2025-09-27",
-    views: "1K",
+    views: 1000,
   },
   {
     slug: "janet-campbells-take-on-pop-music",
@@ -480,7 +480,7 @@ export const shorts: Short[] = [
     youtubeId: "fyYC5d9912U",
     publishedAt: "2025-09-19",
     trending: true,
-    views: "6.9K",
+    views: 6900,
   },
   {
     slug: "andrew-lys-journey-out-of-vietnam",
@@ -489,7 +489,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/o_qSnYrb6Fg/hqdefault.jpg",
     youtubeId: "o_qSnYrb6Fg",
     publishedAt: "2025-09-11",
-    views: "32",
+    views: 32,
   },
   {
     slug: "janet-campbells-experience-in-terunyan",
@@ -498,7 +498,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/MkgIHq7FllY/hqdefault.jpg",
     youtubeId: "MkgIHq7FllY",
     publishedAt: "2025-09-05",
-    views: "490",
+    views: 490,
   },
   {
     slug: "the-eclectic-story-of-janet-campbell",
@@ -507,7 +507,7 @@ export const shorts: Short[] = [
     thumbnail: "https://i.ytimg.com/vi/8cFVe8ZqhWI/hqdefault.jpg",
     youtubeId: "8cFVe8ZqhWI",
     publishedAt: "2025-09-01",
-    views: "487",
+    views: 487,
   },
 ];
 

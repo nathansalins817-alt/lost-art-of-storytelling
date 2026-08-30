@@ -7,7 +7,6 @@ import { shorts } from "@/data/shorts";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteConfig.url, changeFrequency: "weekly", priority: 1 },
-    { url: `${siteConfig.url}/interviews`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteConfig.url}/episodes`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteConfig.url}/news-and-shorts`, changeFrequency: "daily", priority: 0.9 },
     { url: `${siteConfig.url}/guests`, changeFrequency: "weekly", priority: 0.8 },

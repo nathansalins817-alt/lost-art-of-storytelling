@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Globe, MapPin } from "lucide-react";
 import { guests, getGuestBySlug } from "@/data/guests";
 import { getEpisodesByGuest, episodes } from "@/data/episodes";
-import { buildMetadata } from "@/lib/metadata";
+import { buildBreadcrumbList, buildMetadata } from "@/lib/metadata";
 import { guestRole } from "@/lib/utils";
 import { YouTubeLiteEmbed } from "@/components/media/YouTubeLiteEmbed";
 import { EpisodeCard } from "@/components/cards/EpisodeCard";
@@ -72,9 +72,15 @@ export default async function GuestPage({ params }: GuestPageProps) {
       : {}),
   };
 
+  const breadcrumbJsonLd = buildBreadcrumbList([
+    { name: "Guests", path: "/guests" },
+    { name: guest.name, path: `/guests/${guest.slug}` },
+  ]);
+
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <section className="border-b border-line py-14 sm:py-20">
         <div className="container-edit">
           <Link

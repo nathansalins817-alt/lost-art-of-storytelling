@@ -4,6 +4,7 @@ import { YouTubeSubscribeButton } from "@/components/ui/YouTubeSubscribeButton";
 import { YouTubeLiteEmbed } from "@/components/media/YouTubeLiteEmbed";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { episodes, getEpisodeBySlug, getFeaturedEpisode } from "@/data/episodes";
+import { siteConfig } from "@/data/site";
 
 // Flagship episode shown in the hero embed — swap for a real channel
 // trailer once one exists.
@@ -36,8 +37,10 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            The Lost Art of Storytelling with Nathan Salins explores the
-            people, ideas, businesses and stories shaping our world.
+            A refugee who escaped Vietnam by boat. A grandmother who calls
+            her first Montreal winter a &ldquo;nightmare.&rdquo; Nathan
+            Salins sits down with the people carrying stories like these —
+            and lets them tell it in full.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -58,7 +61,8 @@ export function Hero() {
               conversations recorded
             </span>
             <span>
-              <span className="font-bold text-paper">New</span> episodes monthly
+              <span className="font-bold text-paper">New</span> episodes{" "}
+              {siteConfig.publishCadence}
             </span>
             <span>
               <span className="font-bold text-paper">Bay Area</span> &amp;

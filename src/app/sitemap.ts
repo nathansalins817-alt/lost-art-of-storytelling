@@ -3,12 +3,14 @@ import { siteConfig } from "@/data/site";
 import { episodes } from "@/data/episodes";
 import { guests } from "@/data/guests";
 import { shorts } from "@/data/shorts";
+import { clips } from "@/data/clips";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteConfig.url, changeFrequency: "weekly", priority: 1 },
     { url: `${siteConfig.url}/episodes`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteConfig.url}/news-and-shorts`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${siteConfig.url}/clips`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${siteConfig.url}/guests`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${siteConfig.url}/about`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteConfig.url}/be-a-guest`, changeFrequency: "monthly", priority: 0.6 },
@@ -35,5 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...episodeRoutes, ...guestRoutes, ...shortRoutes];
+  const clipRoutes: MetadataRoute.Sitemap = clips.map((clip) => ({
+    url: `${siteConfig.url}/clips/${clip.slug}`,
+    lastModified: clip.publishedAt,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...episodeRoutes, ...guestRoutes, ...shortRoutes, ...clipRoutes];
 }

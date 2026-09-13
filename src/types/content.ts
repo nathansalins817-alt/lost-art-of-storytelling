@@ -85,3 +85,22 @@ export interface Short {
   /** Raw view count — formatted (and threshold-gated) for display via formatViews(). */
   views?: number;
 }
+
+export interface Clip {
+  slug: string;
+  title: string;
+  description: string;
+  /** Only set when the person is a real guest with a profile page. */
+  guestSlug?: string;
+  guestName?: string;
+  category?: ContentCategory;
+  thumbnail: string;
+  youtubeId: string;
+  runtime: string;
+  publishedAt: string;
+  /** Raw view count — formatted (and threshold-gated) for display via formatViews(). */
+  views?: number;
+  /** Set when this clip is a highlight cut from a full episode. */
+  relatedEpisodeSlug?: string;
+  featured?: boolean;
+}

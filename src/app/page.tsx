@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { FeaturedStory } from "@/components/home/FeaturedStory";
 import { LatestInterviews } from "@/components/home/LatestInterviews";
 import { NewsShorts } from "@/components/home/NewsShorts";
+import { LongClips } from "@/components/home/LongClips";
 import { FollowEverywhere } from "@/components/home/FollowEverywhere";
 import { FeaturedGuests } from "@/components/home/FeaturedGuests";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <FeaturedStory />
       <LatestInterviews />
       <NewsShorts />
+      <LongClips />
       <FollowEverywhere />
       <FeaturedGuests />
       <NewsletterSection />

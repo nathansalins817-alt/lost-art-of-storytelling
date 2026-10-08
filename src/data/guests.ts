@@ -143,6 +143,29 @@ export const guests: Guest[] = [
     ],
     featured: true,
   },
+  {
+    slug: "zaileen-janmohamed",
+    name: "Zaileen Janmohamed",
+    title: "President & CEO",
+    organization: "Bay Area Host Committee",
+    shortBio:
+      "President & CEO of the Bay Area Host Committee, who has worked behind the scenes of the Olympics, the Super Bowl, and the FIFA World Cup — including managing athletes like Michael Phelps.",
+    bio: [
+      "Zaileen Janmohamed is President & CEO of the Bay Area Host Committee. Her path runs from studying kinesiology at Simon Fraser University and earning a master's in Sport Management at UMass, through Major League Soccer and athlete marketing work with brands like Visa — including managing athletes such as Michael Phelps.",
+      "On the show, she pulls back the curtain on what it actually takes to host events like the Super Bowl and FIFA World Cup — the 18-to-20-hour workdays, the business side of sponsorship, and how the Bay Area is preparing to host both in the same year.",
+    ],
+    // Placeholder portrait (same i.pravatar.cc convention the whole site
+    // used before real headshots arrived) — swap for her real photo
+    // in /images/guests/ the same way the other 7 guests were replaced.
+    image: "https://i.pravatar.cc/400?u=zaileen-janmohamed",
+    topics: [
+      "Sports business & marketing",
+      "Olympic & Super Bowl operations",
+      "Athlete management",
+      "Event hosting & sponsorship",
+    ],
+    featured: true,
+  },
 ];
 
 export function getGuestBySlug(slug: string) {
